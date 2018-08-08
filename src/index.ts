@@ -1,9 +1,9 @@
 import { EventEmitter } from 'events';
-import execa, { Options } from 'execa';
+import * as execa from 'execa';
 import { access } from 'fs';
 import { platform } from 'os';
 import { basename, extname, resolve, sep } from 'path';
-import which from 'which';
+import * as which from 'which';
 
 import { AdapterInstance } from './adapter';
 
@@ -126,7 +126,7 @@ class Mkiso extends EventEmitter {
    * @returns
    * @memberof Mkiso
    */
-  public async exec(args: ReadonlyArray<string> = [], options?: Options) {
+  public async exec(args: ReadonlyArray<string> = [], options?: execa.Options) {
     try {
       const exists = await this.pathExists(this._source);
       if (!exists) throw new Error(`${this._source} does not exists`);

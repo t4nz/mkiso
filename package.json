@@ -25,9 +25,10 @@
     "test": "test/"
   },
   "scripts": {
+    "prepublish": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "lint": "tslint -p tsconfig.json",
-    "test": "mocha -r ts-node/register test/index.ts",
-    "build": "tsc -p tsconfig.json"
+    "test": "mocha -r ts-node/register test/index.ts"
   },
   "dependencies": {
     "execa": "^0.10.0",
